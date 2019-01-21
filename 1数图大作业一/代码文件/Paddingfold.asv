@@ -1,0 +1,14 @@
+function [PadSrc1] = Paddingfold(ImgSrc1,fold)
+[HeightSrc1,WidthSrc1] = size(ImgSrc1);
+WidthPad1 = 0;
+HeightPad1 = 0;
+if(mod(WidthSrc1,fold)~=0)
+    WidthPad1 = fold - mod(WidthSrc1,fold);
+end
+if(mod(HeightSrc1,fold)~=0)
+    HeightPad1 = fold - mod(HeightSrc1,fold);
+end
+PadSrc1 = padarray(ImgSrc1,[HeightPad1,WidthPad1],'post');
+PadSrc1(HeightSrc1+1:HeightSrc1+HeightPad1
+end
+
